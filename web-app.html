@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Square Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <video id="backgroundVideo" autoplay muted loop>
+        <source src="video/video1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="audio/background_music.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div id="overlay"></div>
+    <div id="game-container">
+
+        <div id="prompt-container">
+            <p id="current-prompt"></p>
+        </div>
+
+        <div id="big-square">
+            <div class="small-square" id="top-left"><div id="top-left-text"></div></div>
+            <div class="small-square" id="top-right"><div id="top-right-text"></div></div>
+            <div class="small-square" id="bottom-left"><div id="bottom-left-text"></div></div>
+            <div class="small-square" id="bottom-right"><div id="bottom-right-text"></div></div>
+        </div>
+        <div id="options">
+            <div class="option" id="blue" draggable="true">💻</div>
+            <div class="option" id="green" draggable="true">🏛</div>
+
+            <div class="option" id="red" draggable="true">⚽️</div>
+            <div class="option" id="yellow" draggable="true">⛏</div>
+
+            <div class="option" id="purple" draggable="true">👾</div>
+            <div class="option" id="brown" draggable="true">💼</div>
+
+            <div class="option" id="pink" draggable="true">👨‍💻</div>
+            <div class="option" id="cyan" draggable="true">👨‍⚖️</div>
+        </div>
+    </div>
+    <script src="engine.js"></script>
+</body>
+</html>
