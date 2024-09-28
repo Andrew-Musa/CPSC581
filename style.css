@@ -7,6 +7,7 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #backgroundVideo {
@@ -45,6 +46,12 @@ body {
     text-align: center;
     font-size: 18px;
     font-weight: bold;
+    color: white;
+    text-shadow: 
+        -1px -1px 0px black,  
+        1px -1px 0px black,
+        -1px 1px 0px black,
+        1px 1px 0px black;
 }
 
 #big-square {
@@ -53,7 +60,7 @@ body {
     grid-template-rows: 1fr 1fr;
     width: 300px;
     height: 300px;
-    border: 2px solid #000;
+    border: 2px solid white;
     position: relative;
     border-radius: 10px;
 }
@@ -66,6 +73,7 @@ body {
     vertical-align: middle;
     line-height: 150px;
     height: 150px;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 #options {
@@ -90,54 +98,54 @@ body {
 
 #blue {
     font-size: 100px;
-    background-color: blue;
+    background-color: white;
     color: white;
 }
 
 #green {
     font-size: 100px;
-    background-color: green;
+    background-color: white;
     color: white;
 }
 
 #red {
     display: none;
     font-size: 100px;
-    background-color: red;
+    background-color: white;
     color: white;
 }
 
 #yellow {
     display: none;
     font-size: 100px;
-    background-color: yellow;
+    background-color: white;
     color: white;
 }
 
 #purple {
     display: none;
     font-size: 100px;
-    background-color: purple;
+    background-color: white;
     color: white;
 }
 
 #brown {
     display: none;
     font-size: 100px;
-    background-color: brown;
+    background-color: white;
     color: white;
 }
 
 #pink {
     display: none;
     font-size: 100px;
-    background-color: pink;
+    background-color: white;
     color: white;
 }
 
 #cyan {
     display: none;
     font-size: 100px;
-    background-color: cyan;
+    background-color: white;
     color: white;
 }

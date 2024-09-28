@@ -1,1 +1,1 @@
-# CPSC581
+# CPSC581-Project1-Collaboration

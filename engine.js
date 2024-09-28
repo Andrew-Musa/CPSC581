@@ -1,5 +1,3 @@
-// script.js
-
 window.addEventListener('load', function() {
     const overlay = document.getElementById('overlay');
     setTimeout(() => {
@@ -12,27 +10,24 @@ window.addEventListener('load', function() {
     }, 1100);
 });
 
-let currentVideoIndex = 1;
+let currentImageIndex = 1;
 
-function changeBackgroundVideo() {
-    const video = document.getElementById('backgroundVideo');
-    currentVideoIndex++;
-    const newVideoSrc = `video/video${currentVideoIndex}.mp4`;
+function changeBackgroundImage() {
+    const backgroundImage = document.getElementById('backgroundImage');
+    currentImageIndex++;
+    const newImageSrc = `backgroundImages/background${currentImageIndex}.jpg`;
     
-    console.log(`Changing video to: ${newVideoSrc}`);
+    console.log(`Changing image to: ${newImageSrc}`);
     
-    video.src = newVideoSrc;
+    backgroundImage.src = newImageSrc;
     
-    video.onerror = function() {
-        console.error(`Error loading video: ${newVideoSrc}`);
+    backgroundImage.onerror = function() {
+        console.error(`Error loading image: ${newImageSrc}`);
     };
     
-    video.onloadeddata = function() {
-        console.log(`Video loaded successfully: ${newVideoSrc}`);
-        video.play().catch(e => console.error("Error playing video:", e));
+    backgroundImage.onload = function() {
+        console.log(`Image loaded successfully: ${newImageSrc}`);
     };
-    
-    video.load();
 }
 
 const squares = document.querySelectorAll('.small-square');
@@ -64,7 +59,7 @@ function dragOver(e) {
     e.preventDefault();
 }
 
-var counter = 0; // Start counter at 0 to match square indices
+var counter = 0;
 
 let userSelections = [];
 
@@ -74,15 +69,12 @@ function drop(e) {
     const option = document.getElementById(data);
     const targetSquare = e.target;
 
-    // Check if the target square already has a background color or if it's not the correct order
     if (targetSquare.style.backgroundColor || !isCorrectSquare(counter, targetSquare.id)) {
-        return; // Do nothing if the square is already colored or not in order
+        return;
     }
 
-    // Add the selected option to userSelections
     userSelections.push(option.id);
 
-    // Change color based on the option dragged
     switch (option.id) {
         case 'blue':
             targetSquare.style.backgroundColor = 'blue';
@@ -136,12 +128,8 @@ function drop(e) {
 
     counter++;
 
-    changeBackgroundVideo();
+    changeBackgroundImage();
     
-    // Show next prompt after placing a puzzle piece
-    // if (counter < prompts.length) {
-    //     showNextPrompt();
-    // }
     showNextPrompt();
 
     if (userSelections.length === 4) {
@@ -170,7 +158,6 @@ function arraysEqual(arr1, arr2) {
     return true;
 }
 
-// Function to check if the square is the correct one based on the counter
 function isCorrectSquare(counter, squareId) {
     const order = {
         'top-left': 0,
@@ -190,7 +177,6 @@ function toggleOptions(option1, option2, showOptions) {
     });
 }
 
-// Function to display and play the current prompt
 function showNextPrompt() {
     if (currentPromptIndex < prompts.length) {
         promptContainer.textContent = prompts[currentPromptIndex];
@@ -199,15 +185,12 @@ function showNextPrompt() {
     }
 }
 
-// Function to play prompt audio
 function playPromptAudio(promptNumber) {
-    // Stop the currently playing audio if there is one
     if (currentAudio) {
         currentAudio.pause();
         currentAudio.currentTime = 0;
     }
 
-    // Play the new audio
     currentAudio = new Audio(`audio/prompt${promptNumber}.mp3`);
     currentAudio.play();
 }
