@@ -67,7 +67,7 @@ function drop(e) {
     e.preventDefault();
     const data = e.dataTransfer.getData('text/plain');
     const option = document.getElementById(data);
-    const targetSquare = e.target;
+    const targetSquare = e.currentTarget;
 
     if (targetSquare.style.backgroundColor || !isCorrectSquare(counter, targetSquare.id)) {
         return;
@@ -78,50 +78,137 @@ function drop(e) {
     switch (option.id) {
         case 'blue':
             targetSquare.style.backgroundColor = 'blue';
-            document.getElementById("top-left-text").innerHTML = "💻";
-            document.getElementById("top-left-text").style.fontSize = "100px";
+            
+            var img = document.createElement('img');
+            img.src = 'buttons/1A.png';
+            img.alt = 'Blue Image';
+            img.style.width = '150px';
+            img.style.height = '150px';
+            img.style.borderRadius = '10px';
+            
+            var topLeftText = document.getElementById("top-left-text");
+            topLeftText.innerHTML = '';
+            topLeftText.appendChild(img)
+
             toggleOptions('blue', 'green', ['red', 'yellow']);
             break;
+
         case 'green':
             targetSquare.style.backgroundColor = 'green';
-            document.getElementById("top-left-text").innerHTML = "🏛";
-            document.getElementById("top-left-text").style.fontSize = "100px";
+
+            var img = document.createElement('img');
+            img.src = 'buttons/1B.png';
+            img.alt = 'Blue Image';
+            img.style.width = '150px';
+            img.style.height = '150px';
+            img.style.borderRadius = '10px';
+            
+            var topLeftText = document.getElementById("top-left-text");
+            topLeftText.innerHTML = '';
+            topLeftText.appendChild(img)
+
             toggleOptions('blue', 'green', ['red', 'yellow']);
             break;
+
         case 'red':
             targetSquare.style.backgroundColor = 'red';
-            document.getElementById("top-right-text").innerHTML = "⚽️";
-            document.getElementById("top-right-text").style.fontSize = "100px";
+
+            var img = document.createElement('img');
+            img.src = 'buttons/2A.png';
+            img.alt = 'Blue Image';
+            img.style.width = '150px';
+            img.style.height = '150px';
+            img.style.borderRadius = '10px';
+            
+            var topLeftText = document.getElementById("top-right-text");
+            topLeftText.innerHTML = '';
+            topLeftText.appendChild(img)
+
             toggleOptions('red', 'yellow', ['purple', 'brown']);
             break;
+
         case 'yellow':
             targetSquare.style.backgroundColor = 'yellow';
-            document.getElementById("top-right-text").innerHTML = "⛏";
-            document.getElementById("top-right-text").style.fontSize = "100px";
+
+            var img = document.createElement('img');
+            img.src = 'buttons/2B.png';
+            img.alt = 'Blue Image';
+            img.style.width = '150px';
+            img.style.height = '150px';
+            img.style.borderRadius = '10px';
+            
+            var topLeftText = document.getElementById("top-right-text");
+            topLeftText.innerHTML = '';
+            topLeftText.appendChild(img)
+
             toggleOptions('red', 'yellow', ['purple', 'brown']);
             break;
+
         case 'purple':
             targetSquare.style.backgroundColor = 'purple';
-            document.getElementById("bottom-left-text").innerHTML = "👾";
-            document.getElementById("bottom-left-text").style.fontSize = "100px";
+
+            var img = document.createElement('img');
+            img.src = 'buttons/3A.png';
+            img.alt = 'Blue Image';
+            img.style.width = '150px';
+            img.style.height = '150px';
+            img.style.borderRadius = '10px';
+            
+            var topLeftText = document.getElementById("bottom-left-text");
+            topLeftText.innerHTML = '';
+            topLeftText.appendChild(img)
+
             toggleOptions('purple', 'brown', ['pink', 'cyan']);
             break;
+
         case 'brown':
             targetSquare.style.backgroundColor = 'brown';
-            document.getElementById("bottom-left-text").innerHTML = "💼";
-            document.getElementById("bottom-left-text").style.fontSize = "100px";
+
+            var img = document.createElement('img');
+            img.src = 'buttons/3B.png';
+            img.alt = 'Blue Image';
+            img.style.width = '150px';
+            img.style.height = '150px';
+            img.style.borderRadius = '10px';
+            
+            var topLeftText = document.getElementById("bottom-left-text");
+            topLeftText.innerHTML = '';
+            topLeftText.appendChild(img)
+
             toggleOptions('purple', 'brown', ['pink', 'cyan']);
             break;
+
         case 'pink':
             targetSquare.style.backgroundColor = 'pink';
-            document.getElementById("bottom-right-text").innerHTML = "👨‍💻";
-            document.getElementById("bottom-right-text").style.fontSize = "100px";
+
+            var img = document.createElement('img');
+            img.src = 'buttons/4A.png';
+            img.alt = 'Blue Image';
+            img.style.width = '150px';
+            img.style.height = '150px';
+            img.style.borderRadius = '10px';
+            
+            var topLeftText = document.getElementById("bottom-right-text");
+            topLeftText.innerHTML = '';
+            topLeftText.appendChild(img)
+
             toggleOptions('pink', 'cyan', []);
             break;
+
         case 'cyan':
             targetSquare.style.backgroundColor = 'cyan';
-            document.getElementById("bottom-right-text").innerHTML = "👨‍⚖️";
-            document.getElementById("bottom-right-text").style.fontSize = "100px";
+
+            var img = document.createElement('img');
+            img.src = 'buttons/4B.png';
+            img.alt = 'Blue Image';
+            img.style.width = '150px';
+            img.style.height = '150px';
+            img.style.borderRadius = '10px';
+            
+            var topLeftText = document.getElementById("bottom-right-text");
+            topLeftText.innerHTML = '';
+            topLeftText.appendChild(img)
+
             toggleOptions('pink', 'cyan', []);
             break;
     }
