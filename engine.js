@@ -67,7 +67,7 @@ function drop(e) {
     e.preventDefault();
     const data = e.dataTransfer.getData('text/plain');
     const option = document.getElementById(data);
-    const targetSquare = e.target;
+    const targetSquare = e.currentTarget;
 
     if (targetSquare.style.backgroundColor || !isCorrectSquare(counter, targetSquare.id)) {
         return;
